@@ -122,4 +122,4 @@ catr-project/
 
 ## Author Information
 
-Developed by Sahith Reddy Thummala and Manish Yerram at Georgia State University.
+Developed by Sahith Reddy Thummala at Georgia State University.
