@@ -1,0 +1,1 @@
+A picture worth describing. (Error: permute(sparse_coo): number of dimensions in the tensor input does not match the length of the desired ordering of dimensions i.e. input.dim() = 2 is not equal to len(dims) = 3)

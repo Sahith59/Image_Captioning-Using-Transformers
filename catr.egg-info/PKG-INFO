@@ -1,0 +1,144 @@
+Metadata-Version: 2.4
+Name: catr
+Version: 0.1.0
+Summary: CATR: Transformer-based Image Captioning
+Home-page: https://github.com/sahithreddythummala/CATR
+Author: Sahith Reddy Thummala, Manish Yerram
+Author-email: sahithreddy.t@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=1.7.0
+Requires-Dist: torchvision>=0.8.0
+Requires-Dist: numpy>=1.19.0
+Requires-Dist: Pillow>=8.0.0
+Requires-Dist: matplotlib>=3.3.0
+Requires-Dist: tqdm>=4.50.0
+Requires-Dist: streamlit>=1.0.0
+Requires-Dist: transformers>=4.0.0
+Requires-Dist: gTTS>=2.2.0
+Requires-Dist: requests>=2.25.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# CATR: Transformer-based Image Captioning
+
+CATR (CAption TRansformer) is a state-of-the-art image captioning model that uses a Transformer architecture to generate natural language descriptions of images.
+
+## Features
+
+- Transformer-based architecture for image captioning
+- ResNet50 backbone for image feature extraction
+- Pre-trained BERT tokenizer for text processing
+- Streamlit web interface for easy interaction
+- Audio generation for accessibility
+- Support for both greedy and beam search decoding
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/sahithreddythummala/CATR.git
+cd CATR
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. (Optional) Install as a package:
+```bash
+pip install -e .
+```
+
+## Usage
+
+### Training
+
+To train the model:
+
+```bash
+python train.py --batch_size 32 --epochs 30
+```
+
+Options:
+- `--batch_size`: Batch size for training (default: 32)
+- `--epochs`: Number of training epochs (default: 30)
+- `--lr`: Learning rate (default: 1e-4)
+- `--weight_decay`: Weight decay for regularization (default: 1e-4)
+- `--checkpoint`: Path to checkpoint to resume training
+- `--no_save`: Do not save checkpoints
+- `--log_step`: Print logs every n steps (default: 100)
+
+### Inference
+
+To generate captions for an image:
+
+```bash
+python predict.py --path path/to/image.jpg --output output/dir
+```
+
+Options:
+- `--path`: Path to the input image (required)
+- `--v`: Model version (v1, v2, v3, custom; default: v3)
+- `--checkpoint`: Path to custom checkpoint
+- `--output`: Output directory (default: ./output)
+- `--no-audio`: Disable audio generation
+- `--beam-size`: Beam size for caption generation (default: 3)
+- `--visualize`: Generate visualization
+
+### Web Interface
+
+To run the Streamlit web interface:
+
+```bash
+streamlit run app.py
+```
+
+## Dataset
+
+CATR is trained on the COCO (Common Objects in Context) dataset.
+
+To use the COCO dataset:
+1. Download the dataset from [COCO website](https://cocodataset.org/#download)
+2. Update the configuration paths in `configuration.py` to point to your dataset
+
+## Model Architecture
+
+- **Backbone**: ResNet50 for image feature extraction
+- **Encoder**: Transformer encoder for processing image features
+- **Decoder**: Transformer decoder for generating captions
+- **Tokenizer**: BERT tokenizer for text tokenization
+
+## Citation
+
+If you use CATR in your research, please cite:
+
+```
+@article{CATR2023,
+  title={CATR: Transformer-based Image Captioning},
+  author={Thummala, Sahith Reddy and Yerram, Manish},
+  journal={ArXiv},
+  year={2023}
+}
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- The Transformer architecture is based on the paper ["Attention is All You Need"](https://arxiv.org/abs/1706.03762) by Vaswani et al.
+- BERT tokenization is implemented using the [Transformers](https://github.com/huggingface/transformers) library by HuggingFace
+- Image feature extraction uses [torchvision](https://github.com/pytorch/vision) models

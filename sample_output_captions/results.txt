@@ -1,0 +1,24 @@
+Image: dog.jpg
+Caption: a white cat with a white collar sitting on the ground.
+
+Image: food.jpg
+Caption: a table topped with plates of food and bowls of food.
+
+Image: street_scene.jpg
+Caption: a wall with a bunch of graffiti on it
+
+Image: dog.jpg
+Caption: a white cat standing on a grassy area.
+
+Image: beach.jpg
+Caption: a view of the ocean from the beach.
+
+Image: food.jpg
+Caption: a plate of food with a spoon and a bowl of soup.
+
+Image: cat.jpg
+Caption: a cat sitting on a couch with its eyes closed.
+
+Image: street_scene.jpg
+Caption: a wall with graffiti on it and a bunch of graffiti on it.
+
